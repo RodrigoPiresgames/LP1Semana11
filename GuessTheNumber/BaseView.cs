@@ -30,9 +30,12 @@ namespace GuessTheNumber
             {
                 case 1:
                     Console.WriteLine("Too low! Try again.");
+                    break;
                 case 2:
                     Console.WriteLine("Too high! Try again.");
-
+                    break;
+                default:
+                    break;
             }
         }
 
