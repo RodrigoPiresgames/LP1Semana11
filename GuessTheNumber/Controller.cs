@@ -26,6 +26,8 @@ namespace GuessTheNumber
             int guess;
             this.view = view;
 
+            view.StartGame();
+
             do
             {
                 guess = view.TakeAGuess();
