@@ -7,7 +7,7 @@ namespace GuessTheNumber
     {
         private readonly Controller controller;
 
-        public UglyView(Controller controller)
+        public BaseView(Controller controller)
         {
             this.controller = controller;
         }
