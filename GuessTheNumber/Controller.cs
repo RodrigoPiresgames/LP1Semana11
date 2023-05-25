@@ -9,7 +9,6 @@ namespace GuessTheNumber
 
         private bool guessedCorrectly;
         private int attempts;
-        private int guess;
         private int targetNumber;
 
         public Controller()
@@ -24,12 +23,12 @@ namespace GuessTheNumber
 
         public void Run(IView view)
         {
-            int input;
+            int guess;
             this.view = view;
 
             do
             {
-                input = view.TakeAGuess();
+                guess = view.TakeAGuess();
 
                 attempts++;
 
