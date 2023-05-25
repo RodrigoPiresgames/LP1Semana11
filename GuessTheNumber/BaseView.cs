@@ -12,19 +12,19 @@ namespace GuessTheNumber
             this.controller = controller;
         }
 
-        void StartGame()
+        public void StartGame()
         {
             Console.WriteLine("Welcome to Guess the Number!");
             Console.WriteLine("I have chosen a number between 1 and 100.");
         }
 
-        int TakeAGuess()
+        public int TakeAGuess()
         {
             Console.Write("Take a guess: ");
             return int.Parse(Console.ReadLine());
         }
 
-        void WrongGuess(int type)
+        public void WrongGuess(int type)
         {
             switch(type)
             {
@@ -36,14 +36,14 @@ namespace GuessTheNumber
             }
         }
 
-        void RightGuess(int attempts)
+        public void RightGuess(int attempts)
         {
             Console.WriteLine(
             "Congratulations! You guessed the number correctly!");
             Console.WriteLine("Number of attempts: " + attempts);
         }
 
-        void VictoryScren()
+        public void VictoryScren()
         {
             Console.WriteLine("Thank you for playing Guess the Number!");
         }
