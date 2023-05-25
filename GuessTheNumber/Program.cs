@@ -6,6 +6,15 @@ namespace GuessTheNumber
     {
         private static void Main()
         {
+            Controller controller = new Controller(list);
+
+            // Create view
+            IView view = new BaseView(controller);
+
+            // Start program
+            controller.Run(view);
+
+            /*
             // Generate a random number
             Random random = new Random();
 
@@ -44,6 +53,7 @@ namespace GuessTheNumber
             }
 
             Console.WriteLine("Thank you for playing Guess the Number!");
+            */
         }
     }
 }

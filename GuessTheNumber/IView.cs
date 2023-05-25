@@ -4,7 +4,6 @@ namespace GuessTheNumber
 {
     public interface IView
     {
-
         void StartGame();
 
         int TakeAGuess();
