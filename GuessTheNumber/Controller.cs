@@ -35,7 +35,7 @@ namespace GuessTheNumber
 
                 if (guess == targetNumber)
                 {
-                    view.RightGuess(int attempts);
+                    view.RightGuess(attempts);
                     guessedCorrectly = true;
                 }
                 else if (guess < targetNumber)
