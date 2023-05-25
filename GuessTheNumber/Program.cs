@@ -6,7 +6,7 @@ namespace GuessTheNumber
     {
         private static void Main()
         {
-            Controller controller = new Controller(list);
+            Controller controller = new Controller();
 
             // Create view
             IView view = new BaseView(controller);
