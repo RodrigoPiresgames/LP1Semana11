@@ -6,7 +6,7 @@ namespace MathDuel
     {
         void StartGame();
 
-        int TakeAGuess(string questionToAsk);
+        string TakeAGuess(string questionToAsk);
 
         void WrongGuess(int answer);
 

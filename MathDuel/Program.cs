@@ -1,9 +1,16 @@
 ﻿using System;
+using MathDuel;
 
 class Program
 {
     static void Main()
     {
+
+        Model model = new Model();
+        Controller controller = new Controller(model);
+        IView view = new ConsoleView(controller, model);
+        controller.Run(view);
+
         Random rand = new Random();
         int score = 0;
         int wrongAnswers = 0;
