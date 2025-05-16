@@ -11,6 +11,7 @@ class Program
         IView view = new ConsoleView(controller, model);
         controller.Run(view);
 
+        /*
         Random rand = new Random();
         int score = 0;
         int wrongAnswers = 0;
@@ -63,5 +64,6 @@ class Program
         }
 
         Console.WriteLine($"Game over! Your final score is: {score}");
+        */
     }
 }

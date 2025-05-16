@@ -6,51 +6,66 @@ namespace MathDuel
     {
 
         private IView view;
+        private Model model;
+        private int score = 0;
+        private int wrongAnswers = 0;
 
-        private bool guessedCorrectly;
-        private int attempts;
-        private int targetNumber;
-
-        public Controller()
+        public Controller(Model model)
         {
+            this.model = model;
             Random random = new Random();
-
-            this.targetNumber = random.Next(1, 101);
-            this.attempts = 0;
-            this.guessedCorrectly = false;
-
         }
 
         public void Run(IView view)
         {
-            int guess;
             this.view = view;
 
             view.StartGame();
 
             do
             {
-                guess = view.TakeAGuess();
+                int a = rand.Next(1, 11);     // 1 to 10
+            int b = rand.Next(1, 11);
+            int operation = rand.Next(3); // 0: +, 1: -, 2: *
 
-                attempts++;
+            int correctAnswer;
+            string question;
 
-                if (guess == targetNumber)
-                {
-                    view.RightGuess(attempts);
-                    guessedCorrectly = true;
-                }
-                else if (guess < targetNumber)
-                {
-                    view.WrongGuess(1);
-                }
-                else
-                {
-                    view.WrongGuess(2);
-                }
+            if (operation == 0)
+            {
+                correctAnswer = a + b;
+                question = $"{a} + {b} = ?";
             }
-            while (guessedCorrectly != true);
+            else if (operation == 1)
+            {
+                correctAnswer = a - b;
+                question = $"{a} - {b} = ?";
+            }
+            else
+            {
+                correctAnswer = a * b;
+                question = $"{a} * {b} = ?";
+            }
 
-            view.VictoryScren();
+            
+            string input = view.TakeAGuess(question);
+
+            int playerAnswer = int.Parse(input);
+
+            if (playerAnswer == correctAnswer)
+            {
+                view.RightGuess();
+                score++;
+            }
+            else
+            {
+                view.WrongGuess(correctAnswer);
+                wrongAnswers++;
+            }
+            }
+            while (wrongAnswers < 3);
+
+            view.LoseScreen(score);
         }
 
     }
